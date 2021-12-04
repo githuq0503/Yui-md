@@ -32,7 +32,7 @@ async function start() {
   })
   console.log(color("Connected"))
   
-  fazd.prefa = "."
+  fazd.prefa = "#"
   fazd.multi = true
   fazd.nopref = false
   fazd.mode = "public"
@@ -43,16 +43,7 @@ async function start() {
     if (!m.messages) return
     xfazd = m.messages[0]
     require("./connect/fazd")(fazd, xfazd)
-  })
-  
-  fazd.ev.on("connection.update", (update) => {
-    const { connection, lastDisconnect } = update
-    if (connection == "close") {
-      lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut
-                ? start()
-                : console.log(FazdLog('connection closed'))
-    }
-  })
+  }}
   
   fazd.ev.on('creds.update', saveState)
   

@@ -23,10 +23,10 @@ nocache("./connect/help", (module) => console.log(FazdLog(`Module "${module}" te
 */
 
 async function start() {
-  console.log(FazdLog("Created By Leon"))
+  console.log(FazdLog("Created By Ardy"))
   const fazd = await makeWASocket({
     logger: P({ level: 'debug' }),
-    browser: ["Yui-Chan","Linux","9.9.9"],
+    browser: ["Fazd-Md","Safari","1.0.0"],
     printQRInTerminal: true,
     auth: state
   })
